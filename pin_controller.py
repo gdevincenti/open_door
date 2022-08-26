@@ -27,11 +27,17 @@ def toggle_canal(canal: int, state: str):
 def canal_on(canal: int):
     toggle_canal(canal, 'on')
 
-def abrir(canal: int, period=0.5):
+def abrir_simple(canal: int, period=0.5):
     toggle_canal(canal, 'on')
     time.sleep(period)
     toggle_canal(canal, 'off')
 
+def abrir_full(period=0.5):
+    for pin in pins:
+        GPIO.output(pin['pin_num'], GPIO.HIGH)
+    time.sleep(period)
+    for pin in pins:
+        GPIO.output(pin['pin_num'], GPIO.LOW)
 
 def canal_off(canal: int):
     toggle_canal(canal, 'off')

@@ -15,7 +15,7 @@ ns = api.namespace('pins', description='Pin related operations')
 pin_model = api.model('pins', {
     'id': fields.Integer(readonly=True, description='The pin unique identifier'),
     'pin_num': fields.Integer(required=True, description='GPIO pin associated with this endpoint'),
-    'color': fields.String(required=True, description='LED color'),
+    'canal': fields.String(required=True, description='LED canal'),
     'state': fields.String(required=True, description='LED on or off')
 })
 
@@ -111,15 +111,10 @@ class Pin(Resource):
 GPIO.setmode(GPIO.BCM)
 
 pin_util = PinUtil()
-pin_util.create({'pin_num': 23, 'color': 'red', 'state': 'off'})
-pin_util.create({'pin_num': 24, 'color': 'yellow', 'state': 'off'})
-pin_util.create({'pin_num': 25, 'color': 'blue', 'state': 'off'})
-pin_util.create({'pin_num': 22, 'color': 'red', 'state': 'off'})
-pin_util.create({'pin_num': 12, 'color': 'yellow', 'state': 'off'})
-pin_util.create({'pin_num': 16, 'color': 'blue', 'state': 'off'})
-pin_util.create({'pin_num': 20, 'color': 'red', 'state': 'off'})
-pin_util.create({'pin_num': 21, 'color': 'green', 'state': 'off'})
-pin_util.create({'pin_num': 13, 'color': 'yellow', 'state': 'off'})
+pin_util.create({'pin_num': 17, 'canal': 1, 'state': 'off'})
+pin_util.create({'pin_num': 18, 'canal': 2, 'state': 'off'})
+pin_util.create({'pin_num': 22, 'canal': 3, 'state': 'off'})
+pin_util.create({'pin_num': 23, 'canal': 4, 'state': 'off'})
 
 
 if __name__ == '__main__':
