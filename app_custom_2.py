@@ -14,6 +14,7 @@ api = Api(app,
 ns = api.namespace('triggered', description='Just trigger')
 
 trigger_model = api.model('triggered', {
+    'pin_num': fields.Integer(required=True, description='GPIO pin associated with this endpoint'),
     'trigger': fields.String(required=True, description='shoots function')
 })
 
@@ -64,7 +65,7 @@ class Trigger(Resource):
 GPIO.setmode(GPIO.BCM)
 
 trigger_util = TriggerUtil()
-trigger_util.create({'trigger': 'off'})
+trigger_util.create({'pin_num': 17,'trigger': 'off'})
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
