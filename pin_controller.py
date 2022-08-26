@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
-#import random
-#import time
+import random
+import time
 
 pins = [{'pin_num': 17, 'canal': 1},
         {'pin_num': 18, 'canal': 2},
@@ -8,7 +8,7 @@ pins = [{'pin_num': 17, 'canal': 1},
         {'pin_num': 23, 'canal': 4}]
 
 GPIO.setmode(GPIO.BCM)  # use GPIO numbering, not generic
-#GPIO.setwarnings(False)
+GPIO.setwarnings(False)
 
 # setup all pins based on above configuration
 for pin in pins:
