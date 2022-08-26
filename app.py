@@ -15,7 +15,7 @@ ns = api.namespace('pins', description='Pin related operations')
 pin_model = api.model('pins', {
     'id': fields.Integer(readonly=True, description='The pin unique identifier'),
     'pin_num': fields.Integer(required=True, description='GPIO pin associated with this endpoint'),
-    'canal': fields.String(required=True, description='LED canal'),
+    'canal': fields.Integer(required=True, description='LED canal'),
     'state': fields.String(required=True, description='LED on or off')
 })
 
@@ -30,7 +30,6 @@ class PinUtil(object):
             if pin['id'] == id:
                 return pin
         api.abort(404, f"pin {id} doesn't exist.")
-
     def create(self, data):
         pin = data
         pin['id'] = self.counter = self.counter + 1
