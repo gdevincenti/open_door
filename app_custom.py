@@ -114,10 +114,10 @@ class Pin(Resource):
 GPIO.setmode(GPIO.BCM)
 
 pin_util = PinUtil()
-pin_util.create({'pin_num': 17, 'canal': 1, 'state': 'off'})
-pin_util.create({'pin_num': 18, 'canal': 2, 'state': 'off'})
-pin_util.create({'pin_num': 22, 'canal': 3, 'state': 'off'})
-pin_util.create({'pin_num': 23, 'canal': 4, 'state': 'off'})
+pin_util.create({'pin_num': 17, 'canal': 1, 'state': 'off', 'trigger': 'off'})
+pin_util.create({'pin_num': 18, 'canal': 2, 'state': 'off', 'trigger': 'off'})
+pin_util.create({'pin_num': 22, 'canal': 3, 'state': 'off', 'trigger': 'off'})
+pin_util.create({'pin_num': 23, 'canal': 4, 'state': 'off', 'trigger': 'off'})
 
 
 if __name__ == '__main__':
