@@ -24,8 +24,13 @@ def toggle_canal(canal: int, state: str):
                 GPIO.output(pin['pin_num'], GPIO.LOW)
 
 
-def canal_on(canal: int:
+def canal_on(canal: int):
     toggle_canal(canal, 'on')
+
+def abrir(canal: int, period=0.5):
+    toggle_canal(canal, 'on')
+    time.sleep(period)
+    toggle_canal(canal, 'off')
 
 
 def canal_off(canal: int):
