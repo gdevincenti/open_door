@@ -63,7 +63,7 @@ class Trigger(Resource):
 
 GPIO.setmode(GPIO.BCM)
 
-trigger_util = PinUtil()
+trigger_util = TriggerUtil()
 trigger_util.create({'trigger': 'off'})
 
 if __name__ == '__main__':
