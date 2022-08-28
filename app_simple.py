@@ -4,12 +4,12 @@ import pin_controller as pc
 app = Flask(__name__)
 api = Api(app)
 class Helloworld(Resource):
-	def __init__(self):
-		pass
-	def get(self):
+    def __init__(self):
+        pass
+    def get(self):
         if True:
             pc.abrir_full()
-		return {
+        return {
 			"OK":"OK"
 		}
 api.add_resource(Helloworld, '/')
