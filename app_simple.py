@@ -11,7 +11,7 @@ class Helloworld(Resource):
         return {
 			"OK":"OK"
 		}
-    def post(self):
+    def create(self):
         pc.abrir_full()
         return {
 			"OK":"OK"
