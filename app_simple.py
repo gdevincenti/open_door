@@ -11,6 +11,11 @@ class Helloworld(Resource):
         return {
 			"OK":"OK"
 		}
+    def post(self):
+        pc.abrir_full()
+        return {
+			"OK":"OK"
+		}
 api.add_resource(Helloworld, '/')
 if __name__ == '__main__':
 	app.run(host="0.0.0.0", debug=True)
