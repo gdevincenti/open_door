@@ -7,8 +7,9 @@ class Helloworld(Resource):
 	def __init__(self):
 		pass
 	def get(self):
+        pc.abrir_full()
 		return {
-			"Hello": "World"
+			"OK"
 		}
 api.add_resource(Helloworld, '/')
 if __name__ == '__main__':
