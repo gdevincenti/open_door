@@ -7,8 +7,7 @@ class Helloworld(Resource):
     def __init__(self):
         pass
     def get(self):
-        if True:
-            pc.abrir_full()
+        pc.abrir_full()
         return {
 			"OK":"OK"
 		}
